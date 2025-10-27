@@ -16,7 +16,7 @@ describe("Product Searching and Filtering", () => {
 
   beforeEach(() => {
     loginPage.goToPage();
-    loginPage.login(email,password)
+    loginPage.login(email, password);
   });
 
   it("searches for electronics and applies filters when no results are found", () => {
@@ -50,7 +50,11 @@ describe("Product Searching and Filtering", () => {
 
         cy.get(searchPage.productPrices).each(($price) => {
           const value = parseFloat($price.text().replace(/[^0-9.]/g, ""));
-          if (!isNaN(value)) expect(value).to.be.within(SearchData.PRICE_FROM, SearchData.PRICE_TO);
+          if (!isNaN(value))
+            expect(value).to.be.within(
+              SearchData.PRICE_FROM,
+              SearchData.PRICE_TO,
+            );
         });
       } else {
         cy.get(searchPage.productItems)

@@ -12,7 +12,6 @@ export class HomePage extends BasePage {
   private readonly cartLink = "#topcartlink";
 
   public readonly accountLabel = ".account";
-  
 
   public goToPage(): void {
     super.goToPage();
@@ -42,5 +41,4 @@ export class HomePage extends BasePage {
   public getCartQty(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get(this.cartQty);
   }
-
 }

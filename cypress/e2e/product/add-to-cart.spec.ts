@@ -2,12 +2,10 @@
 import { HomePage } from "@pages/home/home-page";
 import { SearchPage } from "@pages/product/search-page";
 import { ProductDetailsPage } from "@pages/product/product-details-page";
-import { CartPage } from '@pages/cart/cart-page';
+import { CartPage } from "@pages/cart/cart-page";
 import { GlobalUiTexts } from "@constants/texts/ui-texts/global-ui-texts";
 import { ProductData } from "@data/product-data";
 import { CartMessages } from "@constants/texts/messages/cart-messages";
-
-
 
 describe("Add to Cart - Smartphone Scenario", () => {
   const homePage = new HomePage();
@@ -41,12 +39,24 @@ describe("Add to Cart - Smartphone Scenario", () => {
     homePage.openCart();
 
     cy.get(cartPage.cartItemRow).should("exist");
-    cy.get(cartPage.productName).should("have.text", ProductData.SMARTPHONE.name);
+    cy.get(cartPage.productName).should(
+      "have.text",
+      ProductData.SMARTPHONE.name,
+    );
 
     cy.get(cartPage.cartItemRow).within(() => {
-      cy.get(cartPage.unitPrice).should("have.text", ProductData.SMARTPHONE.price);
-      cy.get(cartPage.qtyInput).should("have.value", ProductData.SMARTPHONE.quantity);
-      cy.get(cartPage.subtotal).should("have.text", ProductData.SMARTPHONE.subtotal);
+      cy.get(cartPage.unitPrice).should(
+        "have.text",
+        ProductData.SMARTPHONE.price,
+      );
+      cy.get(cartPage.qtyInput).should(
+        "have.value",
+        ProductData.SMARTPHONE.quantity,
+      );
+      cy.get(cartPage.subtotal).should(
+        "have.text",
+        ProductData.SMARTPHONE.subtotal,
+      );
     });
   });
 });
