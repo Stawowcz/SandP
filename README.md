@@ -89,7 +89,7 @@ Create a `cypress.env.json` file (not committed to repo):
 ```json
 {
   "loginEmail": "example@test.com",
-  "loginPassword": "Test1234!"
+  "loginPassword": "example123!"
 }
 ```
 ---
