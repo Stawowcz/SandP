@@ -82,6 +82,18 @@ npm ci
 
 ---
 
+## Environment Variables
+
+Create a `cypress.env.json` file (not committed to repo):
+
+```json
+{
+  "loginEmail": "example@test.com",
+  "loginPassword": "Test1234!"
+}
+```
+---
+
 ## Running Tests
 
 ### Headed mode:
@@ -106,26 +118,6 @@ npm run test:firefox
 npm run test:edge
 npm run test:headed
 npm run test:spec
-```
-
----
-
-## Environment Variables
-
-Create a `cypress.env.json` file (not committed to repo):
-
-```json
-{
-  "loginEmail": "example@test.com",
-  "loginPassword": "Test1234!"
-}
-```
-
-or define them as GitHub Secrets:
-
-```
-CYPRESS_loginEmail
-CYPRESS_loginPassword
 ```
 
 ---
